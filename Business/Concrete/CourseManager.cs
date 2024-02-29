@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
+using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Business.Concrete
         {
             _courseDal = courseDal;
         }
+
         public void Add(Course course)
         {
             _courseDal.Add(course);
@@ -30,6 +32,11 @@ namespace Business.Concrete
         public List<Course> GetAll()
         {
             return _courseDal.GetAll();
+        }
+
+        public List<Course> GetById(int Id)
+        {
+            return _courseDal.GetById(Id);
         }
 
         public void Update(Course course)

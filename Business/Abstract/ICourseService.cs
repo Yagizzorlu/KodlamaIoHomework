@@ -13,5 +13,6 @@ namespace Business.Abstract
         public void Add(Course course);
         public void Delete(Course course);
         public void Update(Course course);
+        public List<Course> GetById(int Id);
     }
 }
